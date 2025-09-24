@@ -1,13 +1,15 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* Spacing */
+  --space-xs: 1rem;
+  --space-s: 2rem;
+  --space-md: 4rem;
+  --space-lg: 6rem;
+  --space-xl: 8rem;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Radius */
+  --small: 4px;
+  --medium: 8px;
+  --large: 12px;
 }
 
 html,
@@ -17,8 +19,8 @@ body {
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: var(--colors-system-dark);
+  background: var(--colors-system-light);
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -33,10 +35,30 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+  padding: var(--space-xs);
+  border-radius: var(--medium);
+  border: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.primary-link {
+  background-color: var(--colors-brand-primary-background);
+  color: var(--colors-brand-primary-foreground);
+  inline-size: fit-content;
+}
+
+.primary-link:hover {
+  background-color: var(--colors-brand-accent-background);
+  color: var(--colors-brand-accent-foreground);
+}
+
+.primary-reverse-link {
+  background-color: var(--colors-brand-primary-reverse-background);
+  color: var(--colors-brand-primary-reverse-foreground);
+  inline-size: fit-content;
+  border: 2px solid var(--colors-brand-primary-reverse-foreground);
+}
+
+.primary-reverse-link:hover {
+  background-color: var(--colors-brand-primary-background);
+  color: var(--colors-brand-primary-foreground);
 }

@@ -1,50 +1,32 @@
+'use client'
 import Image from "next/image";
 import styles from "./page.module.css";
+import { TextBlock } from "@/components/textBlock";
+import Link from "next/link";
+import { useTheme } from "./providers/ThemeContext";
 
 export default function Home() {
+  const { logo } = useTheme();
   return (
     <div className={styles.page}>
       <main className={styles.main}>
         <Image
           className={styles.logo}
-          src="/next.svg"
+          src={logo}
           alt="Next.js logo"
-          width={180}
+          width={200}
           height={38}
           priority
         />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
 
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
+        <TextBlock 
+          title="Hello World!" 
+          body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam lorem, vel tincidunt nibh enim non elit. Nullam eget ligula vitae odio dictum gravida. Curabitur in magna sit amet nulla commodo fermentum. Suspendisse potenti. Integer et posuere libero, nec vestibulum augue. Donec vel nunc sed nunc interdum dapibus ut vel quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
+          surface='accent'
+        />
+
+        <Link href="/" className="primary-link">Primary link</Link>
+        <Link href="/" className="primary-reverse-link">Primary reverse link</Link>
       </main>
       <footer className={styles.footer}>
         <a
@@ -93,3 +75,4 @@ export default function Home() {
     </div>
   );
 }
+
