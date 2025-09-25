@@ -1,0 +1,17 @@
+.base {
+    background: linear-gradient(
+		to top,
+		var(--colors-brand-accent-background) 0%,
+		var(--colors-brand-tint-background) 100%
+	);
+	border-radius: var(--large);
+	padding: var(--space-xs);
+	height: 12rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.title {
+	font-size: 4rem;
+}

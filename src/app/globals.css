@@ -38,27 +38,5 @@ a {
   padding: var(--space-xs);
   border-radius: var(--medium);
   border: 0;
-}
-
-.primary-link {
-  background-color: var(--colors-brand-primary-background);
-  color: var(--colors-brand-primary-foreground);
   inline-size: fit-content;
-}
-
-.primary-link:hover {
-  background-color: var(--colors-brand-accent-background);
-  color: var(--colors-brand-accent-foreground);
-}
-
-.primary-reverse-link {
-  background-color: var(--colors-brand-primary-reverse-background);
-  color: var(--colors-brand-primary-reverse-foreground);
-  inline-size: fit-content;
-  border: 2px solid var(--colors-brand-primary-reverse-foreground);
-}
-
-.primary-reverse-link:hover {
-  background-color: var(--colors-brand-primary-background);
-  color: var(--colors-brand-primary-foreground);
 }

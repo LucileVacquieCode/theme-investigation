@@ -1,9 +1,29 @@
 'use client'
 import Image from "next/image";
 import styles from "./page.module.css";
-import { TextBlock } from "@/components/textBlock";
-import Link from "next/link";
+import { TextBlock } from "@/components/textBlock/textBlock";
 import { useTheme } from "./providers/ThemeContext";
+import { Link } from "@/components/link/link";
+import { Card } from "@/components/card/card";
+
+const cardData = [
+  {
+    title: "300+",
+    body: "Trusted by over 300 leading Fortune Global 500 companies worldwide."
+  },
+  {
+    title: "#1",
+    body: "Recognised as the world’s largest, most influential advertising company globally."
+  },
+  {
+    title: "200+",
+    body: "Winner of more than 200 prestigious awards for creative excellence."
+  },
+  {
+    title: "50+",
+    body: "Operating offices in over 50 countries, delivering truly global reach."
+  },
+]
 
 export default function Home() {
   const { logo } = useTheme();
@@ -19,14 +39,19 @@ export default function Home() {
           priority
         />
 
+        <section className={styles.cardSection}>
+          {cardData.map((card, index) => {
+            return <Card key={`card${index}`} title={card.title} body={card.body}/>
+          })}
+        </section>
+
         <TextBlock 
           title="Hello World!" 
           body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, urna eu tincidunt consectetur, nisi nisl aliquam lorem, vel tincidunt nibh enim non elit. Nullam eget ligula vitae odio dictum gravida. Curabitur in magna sit amet nulla commodo fermentum. Suspendisse potenti. Integer et posuere libero, nec vestibulum augue. Donec vel nunc sed nunc interdum dapibus ut vel quam. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
           surface='accent'
         />
-
-        <Link href="/" className="primary-link">Primary link</Link>
-        <Link href="/" className="primary-reverse-link">Primary reverse link</Link>
+        <Link label="Primary link" url="/" surface="primary"/>
+        <Link label="Primary reverse link" url="/" surface="primary-reverse"/>
       </main>
       <footer className={styles.footer}>
         <a
